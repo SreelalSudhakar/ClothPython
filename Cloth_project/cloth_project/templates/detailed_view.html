@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="p-5">
+    <div class="row">
+        <div class="card col-md-3 card_view">
+            <img src="{{res.img.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{res.name}}</h5>
+            <p class="card-text">{{res.type}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{res.des}}</li>
+            <li class="list-group-item">₹ {{res.price}}</li>
+            </ul>
+            <div class="card-body">
+                <a href="" class="btn btn-primary">Buy</a>
+                <a href="" class="btn btn-warning">Cart</a>
+                <a href="{% url 'clothapp:update' res.id %}" class="btn btn-warning">Update</a>
+                <a href="{% url 'clothapp:delete' res.id %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
